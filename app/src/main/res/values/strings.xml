@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">LostXmas</string>
+    <string name="action_settings">Settings</string>
+    <string name="head_reply">Am I cute?</string>
+    <string name="chest_reply">Hey! You dirty rascal!</string>
+    <string name="waist_reply">If you work harder, you can be as slim as me!</string>
+    <string name="right_leg_reply">Don\'t touch that!</string>
+    <string name="left_leg_1_reply">I will call the police~</string>
+    <string name="left_leg_2_reply">Do you treat your girlfriend like that?</string>
+</resources>
