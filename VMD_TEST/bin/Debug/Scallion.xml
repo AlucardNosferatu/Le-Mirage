@@ -1,0 +1,752 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Scallion</name>
+    </assembly>
+    <members>
+        <member name="T:Scallion.Core.IMMDFile`1">
+            <summary>
+            Provides I/O functionality for MMD file.
+            </summary>
+            <typeparam name="T">The actual type implemented this interface</typeparam>
+        </member>
+        <member name="M:Scallion.Core.IMMDFile`1.Load(System.String)">
+            <summary>
+            Loads a file from the specified path.
+            </summary>
+            <param name="path">The file path to load</param>
+            <returns>The self instance</returns>
+        </member>
+        <member name="M:Scallion.Core.IMMDFile`1.Save(System.String)">
+            <summary>
+            Saves the instance to the specified path.
+            </summary>
+            <param name="path">The file path to save</param>
+        </member>
+        <member name="T:Scallion.Core.MMDFile`1">
+            <summary>
+            Represents a MMD file and provides internal implementations of <see cref="T:Scallion.Core.IMMDFile`1"/>.
+            This class is abstract.
+            </summary>
+            <typeparam name="T">The actual type inheriting this class</typeparam>
+        </member>
+        <member name="M:Scallion.Core.MMDFile`1.Load(System.String)">
+            <summary>
+            Loads a file from the specified path.
+            </summary>
+            <param name="path">The file path to load</param>
+            <returns>The self instance</returns>
+        </member>
+        <member name="M:Scallion.Core.MMDFile`1.Save(System.String)">
+            <summary>
+            Saves the instance to specified path.
+            </summary>
+            <param name="path">The file path to save</param>
+        </member>
+        <member name="T:Scallion.Core.IMoSerializable">
+            <summary>
+            Provides functionality for a serializable object with <see cref="T:Scallion.Core.MoSerializer"/> and <see cref="T:Scallion.Core.MoDeserializer"/>.
+            </summary>
+        </member>
+        <member name="M:Scallion.Core.IMoSerializable.Serialize(Scallion.Core.MoSerializer)">
+            <summary>
+            Serializes a object with the specified <see cref="T:Scallion.Core.MoSerializer"/>.
+            </summary>
+            <param name="archive">The instance of <see cref="T:Scallion.Core.MoSerializer"/> to serialize</param>
+        </member>
+        <member name="M:Scallion.Core.IMoSerializable.Deserialize(Scallion.Core.MoDeserializer)">
+            <summary>
+            Deserializes this instance with the specified <see cref="T:Scallion.Core.MoDeserializer"/>.
+            </summary>
+            <param name="archive">The instance of <see cref="T:Scallion.Core.MoDeserializer"/> to deserialize</param>
+        </member>
+        <member name="T:Scallion.Core.MMDObject">
+            <summary>
+            Represents an object used in a MMD file.
+            This class is abstract.
+            </summary>
+        </member>
+        <member name="M:Scallion.Core.MMDObject.Serialize(Scallion.Core.MoSerializer)">
+            <summary>
+            Serializes a object with the specified <see cref="T:Scallion.Core.MoSerializer"/>.
+            </summary>
+            <param name="archive">The instance of <see cref="T:Scallion.Core.MoSerializer"/> to serialize</param>
+        </member>
+        <member name="M:Scallion.Core.MMDObject.Deserialize(Scallion.Core.MoDeserializer)">
+            <summary>
+            Deserializes this instance with the specified <see cref="T:Scallion.Core.MoDeserializer"/>.
+            </summary>
+            <param name="archive">The instance of <see cref="T:Scallion.Core.MoDeserializer"/> to deserialize</param>
+        </member>
+        <member name="T:Scallion.Core.MoIO">
+            <summary>
+            Provides properties used for I/O.
+            This class is abstract.
+            </summary>
+        </member>
+        <member name="P:Scallion.Core.MoIO.FileEncoding">
+            <summary>
+            Gets or sets a character encoding to be used for I/O.
+            </summary>
+        </member>
+        <member name="M:Scallion.Core.MoIO.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.Core.MoIO"/> class with Shift-JIS.
+            </summary>
+        </member>
+        <member name="M:Scallion.Core.MoIO.#ctor(System.Text.Encoding)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.Core.MoIO"/> class with the specified character encoding.
+            </summary>
+            <param name="enc">The character encoding to be used for I/O</param>
+        </member>
+        <member name="T:Scallion.Core.MoDeserializer">
+            <summary>
+            Represents a deserializer for <see cref="T:Scallion.Core.MMDObject"/>.
+            </summary>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.Core.MoDeserializer"/> class for the specified stream.
+            </summary>
+            <param name="input">The stream to be read</param>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.Deserialize``1">
+            <summary>
+            Deserializes an object of the <typeparamref name="T"/> class from the stream.
+            </summary>
+            <typeparam name="T">The type of a object to be deserialized</typeparam>
+            <returns>The deserialized object of the <typeparamref name="T"/> class</returns>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.Deserialize``1(``0)">
+            <summary>
+            Deserializes an object of the <typeparamref name="T"/> class from the stream.
+            </summary>
+            <typeparam name="T">The type of a object to be deserialized</typeparam>
+            <param name="obj">The object which deserialized value is assigned to</param>
+            <returns>The object specified as <paramref name="obj"/></returns>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.DeserializeList``1">
+            <summary>
+            Deserializes a collection of the <typeparamref name="T"/> class from the stream.
+            </summary>
+            <typeparam name="T">The type of a object to be deserialized</typeparam>
+            <returns>The deserialized collection of the <typeparamref name="T"/> class</returns>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.ReadInt32">
+            <summary>
+            Reads a four-byte signed integer from the stream.
+            </summary>
+            <returns>A four-byte signed integer read from the stream.</returns>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.ReadSingle">
+            <summary>
+            Reads a four-byte floating point value from the stream.
+            </summary>
+            <returns>A four-byte floating point value read from the stream.</returns>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.ReadByte">
+            <summary>
+            Reads an unsigned byte from the stream.
+            </summary>
+            <returns>An unsigned byte read from the stream</returns>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.ReadByteString(System.Int32)">
+            <summary>
+            Reads a byte array as a string encoded in <see cref="P:Scallion.Core.MoIO.FileEncoding"/>.
+            </summary>
+            <param name="bytesCount">The byte length to read</param>
+            <returns>A string read and encoded in <see cref="P:Scallion.Core.MoIO.FileEncoding"/> from the stream</returns>
+        </member>
+        <member name="M:Scallion.Core.MoDeserializer.ReadVariableString">
+            <summary>
+            Reads a byte array leading its length as a string encoded in <see cref="P:Scallion.Core.MoIO.FileEncoding"/>.
+            </summary>
+            <returns>A string read and encoded in <see cref="P:Scallion.Core.MoIO.FileEncoding"/> from the stream.</returns>
+        </member>
+        <member name="T:Scallion.Core.MoSerializer">
+            <summary>
+            Represents a serializer for <see cref="T:Scallion.Core.MMDObject"/>.
+            </summary>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.#ctor(System.IO.Stream)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.Core.MoSerializer"/> class for the specified stream.
+            </summary>
+            <param name="output">The stream to write</param>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.Serialize``1(``0)">
+            <summary>
+            Serializes the specified object of the <see cref="T:Scallion.Core.MMDObject"/> class to the stream.
+            </summary>
+            <typeparam name="T">The type of a object to be serialized</typeparam>
+            <param name="item">The object to be serialized</param>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.SerializeList``1(System.Collections.Generic.List{``0})">
+            <summary>
+            Serializes a collection of the <typeparamref name="T"/> class to the stream.
+            </summary>
+            <typeparam name="T">The type of objects to be serialized</typeparam>
+            <param name="list">The collection to be serialized</param>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.WriteInt32(System.Int32)">
+            <summary>
+            Writes a four-byte signed integer to the stream.
+            </summary>
+            <param name="value">The value to write</param>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.WriteSingle(System.Single)">
+            <summary>
+            Writes a four-bytes floating point value to the stream.
+            </summary>
+            <param name="value">The value to write</param>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.WriteByte(System.Byte)">
+            <summary>
+            Writes an unsigned byte to the stream.
+            </summary>
+            <param name="value">The value to write</param>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.WriteByteString(System.String,System.Int32)">
+            <summary>
+            Writes a string as a byte array encoded in <see cref="P:Scallion.Core.MoIO.FileEncoding"/> with specified bytes to the stream.
+            </summary>
+            <param name="value">The string to write</param>
+            <param name="bytesCount">The length of a byte array to write</param>
+        </member>
+        <member name="M:Scallion.Core.MoSerializer.WriteVariableString(System.String)">
+            <summary>
+            Writes a string as a byte array encoded in <see cref="P:Scallion.Core.MoIO.FileEncoding"/> with its length.
+            </summary>
+            <param name="value">The string to write</param>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.Camera">
+            <summary>
+            Represents an camera used in MMD.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Camera.KeyFrames">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.CameraKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.Camera.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.Camera"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.CameraKeyFrame">
+            <summary>
+            Represents a key frame for a camera.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraKeyFrame.Position">
+            <summary>
+            Gets or sets the position of the camera in this key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraKeyFrame.Rotation">
+            <summary>
+            Gets or sets the angle of the camera in this key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraKeyFrame.Interpolation">
+            <summary>
+            Gets or sets the interpolation in this key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraKeyFrame.Distance">
+            <summary>
+            Gets or sets the camera distance in this key frame.
+            </summary>
+            <remarks>
+            If this value is negative, the camera is in front of the position.
+            </remarks>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraKeyFrame.AngleOfView">
+            <summary>
+            Gets or sets the angle of view in this key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraKeyFrame.IsPerspectiveEnabled">
+            <summary>
+            Gets or sets a value indicating whether perspective is enabled.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.CameraKeyFrame.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.CameraKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.CameraInterpolation">
+            <summary>
+            Represents an interpolation used for a camera key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraInterpolation.X">
+            <summary>
+            Gets or sets an interpolation value for x-direction.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraInterpolation.Y">
+            <summary>
+            Gets or sets an interpolation value for y-direction.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraInterpolation.Z">
+            <summary>
+            Gets or sets an interpolation value for z-direction.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraInterpolation.R">
+            <summary>
+            Gets or sets an interpolation value for rotation.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraInterpolation.D">
+            <summary>
+            Gets or sets an interpolation value for a camera distance.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.CameraInterpolation.V">
+            <summary>
+            Gets or sets an interpolation value for a angle of view.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.CameraInterpolation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.CameraInterpolation"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.Light">
+            <summary>
+            Represents a light in MMD.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Light.KeyFrames">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.LightKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.Light.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.Light"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.LightKeyFrame">
+            <summary>
+            Represents a key frame for a light configuration.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.LightKeyFrame.Position">
+            <summary>
+            Gets or sets a position of the light in this key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.LightKeyFrame.Color">
+            <summary>
+            Gets or sets a color of the light in this key frame.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.Morph">
+            <summary>
+            Represents a morph of a model used in MMD.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Morph.Name">
+            <summary>
+            Gets or sets the name of this morph.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Morph.KeyFrames">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.MorphKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.Morph.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.Morph"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.MorphKeyFrame">
+            <summary>
+            Represents a key frame for a morph.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.MorphKeyFrame.Weight">
+            <summary>
+            Gets or sets a value of the morph in this key frame.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.SelfShadow">
+            <summary>
+            Represents a self shadow configuration used in MMD.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.SelfShadow.KeyFrames">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.SelfShadowKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.SelfShadow.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.SelfShadow"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.SelfShadowKeyFrame">
+            <summary>
+            Represents a key frame for a self shadow configuration.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.SelfShadowKeyFrame.Type">
+            <summary>
+            Gets or sets a type of self-shadowing methods in <see cref="T:Scallion.DomainModels.Components.SelfShadowType"/>.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.SelfShadowKeyFrame.Distance">
+            <summary>
+            Gets or sets the shadow distance.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.SelfShadowType">
+            <summary>
+            Specifies the method of self-shadowing.
+            </summary>
+        </member>
+        <member name="F:Scallion.DomainModels.Components.SelfShadowType.Off">
+            <summary>
+            Do not use self-shadowing.
+            </summary>
+        </member>
+        <member name="F:Scallion.DomainModels.Components.SelfShadowType.Mode1">
+            <summary>
+            Use Mode1 method that renders shadows averagely.
+            </summary>
+        </member>
+        <member name="F:Scallion.DomainModels.Components.SelfShadowType.Mode2">
+            <summary>
+            Use Mode2 method that renders shadows prioritized close-range view.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.KeyFrame">
+            <summary>
+            Represents a key frame used for transition.
+            This class is abstract.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.KeyFrame.KeyFrameIndex">
+            <summary>
+            Gets or sets the index of this key frame.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.VisibilityKeyFrame">
+            <summary>
+            Represents a key frame that indicates whether a object is visible.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.VisibilityKeyFrame.IsVisible">
+            <summary>
+            Gets or sets a value indicating whether the object is visible.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.Bone">
+            <summary>
+            Represents a bone of a model used in MMD.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Bone.Name">
+            <summary>
+            Gets or sets the name of this bone.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Bone.KeyFrames">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.BoneKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.Bone.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.Bone"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.IKBone">
+            <summary>
+            Represents a bone implemented Inverse Kinematics.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.IKBone.IKStateKeyFrames">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.IKStateKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.IKBone.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.IKBone"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.BoneKeyFrame">
+            <summary>
+            Represents a key frame for a bone.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.BoneKeyFrame.Position">
+            <summary>
+            Gets or sets a position of the bone in this key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.BoneKeyFrame.Quaternion">
+            <summary>
+            Gets or sets a quaternion of the bone in this key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.BoneKeyFrame.Interpolation">
+            <summary>
+            Gets or sets the interpolation in this key frame.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.BoneKeyFrame.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.BoneKeyFrame"/> class.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.IKStateKeyFrame">
+            <summary>
+            Represents a key frame indicating whether IK of the bone is enabled.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.IKStateKeyFrame.IsIKEnabled">
+            <summary>
+            Gets or sets a value indicating whether IK of the bone is enabled.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.BoneInterpolation">
+            <summary>
+            Represents an interpolation used for a bone key frame.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.BoneInterpolation.X">
+            <summary>
+            Gets or sets an interpolation value for x-direction.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.BoneInterpolation.Y">
+            <summary>
+            Gets or sets an interpolation value for y-direction.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.BoneInterpolation.Z">
+            <summary>
+            Gets or sets an interpolation value for z-direction.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.BoneInterpolation.R">
+            <summary>
+            Gets or sets an interpolation value for rotation.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.BoneInterpolation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.BoneInterpolation"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.BoneInterpolation.#ctor(Scallion.DomainModels.Components.Interpolation,Scallion.DomainModels.Components.Interpolation,Scallion.DomainModels.Components.Interpolation,Scallion.DomainModels.Components.Interpolation)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.BoneInterpolation"/> class that contains elements copied from specified value.
+            </summary>
+            <param name="x">The interploation value for x-direction</param>
+            <param name="y">The interpolation value for y-direction</param>
+            <param name="z">The interpolation value for z-direction</param>
+            <param name="r">The interpolation value for rotation</param>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.Interpolation">
+            <summary>
+            Represents an interpolating curve that used in a interpolation.
+            </summary>
+            <remarks>
+            In MMD, a interpolation is implemented as a cubic bezier curve that first and last points are fixed as (0, 0), (127, 127).
+            This class has the second and third points as <see cref="P:Scallion.DomainModels.Components.Interpolation.First"/> and <see cref="P:Scallion.DomainModels.Components.Interpolation.Second"/> properties for the curve.
+            </remarks>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Interpolation.First">
+            <summary>
+            Gets or sets the first interpolation parameter.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.Interpolation.Second">
+            <summary>
+            Gets or sets the second interpolation parameter.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.Interpolation.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.Interpolation"/> class that defined as linear interpolation.
+            </summary>
+        </member>
+        <member name="T:Scallion.DomainModels.Components.InterpolationParameter">
+            <summary>
+            Represents a point used for interpolation.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.InterpolationParameter.X">
+            <summary>
+            Gets or sets a value of the x-coordinate(time axis) of this parameter.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Components.InterpolationParameter.Y">
+            <summary>
+            Gets or sets a value of the y-coordinate(value axis) of this parameter.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Components.InterpolationParameter.#ctor(System.Byte,System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Components.InterpolationParameter"/> class with the specified coordinates.
+            </summary>
+            <param name="x">The x-coordinate(time axis) of this parameter</param>
+            <param name="y">The y-coordinate(value axis) of this parameter</param>
+        </member>
+        <member name="T:Scallion.DomainModels.Motion">
+            <summary>
+            Represents MMD Motion File(.vmd).
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.ModelName">
+            <summary>
+            Gets or sets the name of a model which the motion made for.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.Bones">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.Bone"/> class.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.IKBones">
+            <summary>
+            Gets a collection of the <see cref="T:Scallion.DomainModels.Components.IKBone"/> class in <see cref="P:Scallion.DomainModels.Motion.Bones"/> property.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.Morphs">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.Morph"/> class.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.Camera">
+            <summary>
+            Gets or sets a instance of the <see cref="T:Scallion.DomainModels.Components.Camera"/> class for this motion.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.Light">
+            <summary>
+            Gets or sets a instance of the <see cref="T:Scallion.DomainModels.Components.Light"/> class for this motion.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.SelfShadow">
+            <summary>
+            Gets or sets a instance of the <see cref="T:Scallion.DomainModels.Components.SelfShadow"/> class for this motion.
+            </summary>
+        </member>
+        <member name="P:Scallion.DomainModels.Motion.VisibilityKeyFrames">
+            <summary>
+            Gets or sets a collection of the <see cref="T:Scallion.DomainModels.Components.VisibilityKeyFrame"/> class for this motion.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Motion.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.DomainModels.Motion"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.DomainModels.Motion.Load(System.String)">
+            <summary>
+            Loads a motion from the specified file.
+            </summary>
+            <param name="path">The file path to load a motion</param>
+            <returns>The self instance assigned values from file</returns>
+            <exception cref="T:System.ArgumentException">
+            Thrown when the specified file is invalid or unsupported file.
+            </exception>
+        </member>
+        <member name="M:Scallion.DomainModels.Motion.Save(System.String)">
+            <summary>
+            Saves this motion to the specified file.
+            </summary>
+            <param name="path">The file path to save this motion</param>
+        </member>
+        <member name="T:Scallion.Internal.Converters.IConverter`2">
+            <summary>
+            Provides a way to convert between two types of objects.
+            </summary>
+            <typeparam name="TSource">The type of the object which will be converted from</typeparam>
+            <typeparam name="TDest">The type of the object which will be converted to</typeparam>
+        </member>
+        <member name="M:Scallion.Internal.Converters.IConverter`2.Convert(`0)">
+            <summary>
+            Converts the specified object into <typeparamref name="TDest"/>.
+            </summary>
+            <param name="src">The source object to be converted</param>
+            <returns>A converted object</returns>
+        </member>
+        <member name="M:Scallion.Internal.Converters.IConverter`2.ConvertBack(`1)">
+            <summary>
+            Converts back the specified object into <typeparamref name="TSource"/>.
+            </summary>
+            <param name="src">The source object to be converted back</param>
+            <returns>A converted object</returns>
+        </member>
+        <member name="T:Scallion.Internal.Converters.IInstanceConverter`2">
+            <summary>
+            Provides a way to convert with specified instance between two types of objects.
+            </summary>
+            <typeparam name="TSource">The type of the object which will be converted from</typeparam>
+            <typeparam name="TDest">The type of the object which will be converted to</typeparam>
+        </member>
+        <member name="M:Scallion.Internal.Converters.IInstanceConverter`2.Convert(`0,`1)">
+            <summary>
+            Converts the specified object into <typeparamref name="TDest"/>.
+            </summary>
+            <param name="src">The source object to be converted</param>
+            <param name="obj">The object that converted values assigned to</param>
+            <returns>A converted object</returns>
+        </member>
+        <member name="M:Scallion.Internal.Converters.IInstanceConverter`2.ConvertBack(`1,`0)">
+            <summary>
+            Converts back the specified object into <typeparamref name="TSource"/>.
+            </summary>
+            <param name="src">The source object to be converted back</param>
+            <param name="obj">The object that converted values assigned to</param>
+            <returns>A converted object</returns>
+        </member>
+        <member name="T:Scallion.Internal.StructWrapper`1">
+            <summary>
+            Implements abstract methods of the <see cref="T:Scallion.Core.MMDObject"/> class for structures.
+            </summary>
+            <typeparam name="T">The type of struct to serialize and deserialize</typeparam>
+        </member>
+        <member name="P:Scallion.Internal.StructWrapper`1.Value">
+            <summary>
+            Gets or sets a value of the <typeparamref name="T"/> structure that is serialized or deserialized.
+            </summary>
+        </member>
+        <member name="M:Scallion.Internal.StructWrapper`1.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.Internal.StructWrapper`1"/> class.
+            </summary>
+        </member>
+        <member name="M:Scallion.Internal.StructWrapper`1.#ctor(`0)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Scallion.Internal.StructWrapper`1"/> class with the specified value.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="T:Scallion.Internal.IOExtension">
+            <summary>
+            Provides a set of static methods for I/O.
+            </summary>
+        </member>
+        <member name="M:Scallion.Internal.IOExtension.TrimNull(System.String)">
+            <summary>
+            Returns a new string that a first null character and followed characters are removed from the string.
+            </summary>
+            <param name="str">The string to be trimmed</param>
+            <returns>A string that a first null character and followed characters are removed.</returns>
+        </member>
+    </members>
+</doc>

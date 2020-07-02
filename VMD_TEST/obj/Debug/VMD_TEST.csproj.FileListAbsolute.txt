@@ -1,0 +1,11 @@
+E:\LostXmas\LostXmas\VMD_TEST\bin\Debug\VMD_TEST.exe.config
+E:\LostXmas\LostXmas\VMD_TEST\bin\Debug\VMD_TEST.exe
+E:\LostXmas\LostXmas\VMD_TEST\bin\Debug\VMD_TEST.pdb
+E:\LostXmas\LostXmas\VMD_TEST\bin\Debug\Scallion.dll
+E:\LostXmas\LostXmas\VMD_TEST\bin\Debug\System.Numerics.Vectors.dll
+E:\LostXmas\LostXmas\VMD_TEST\bin\Debug\Scallion.xml
+E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.csprojAssemblyReference.cache
+E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.csproj.CoreCompileInputs.cache
+E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.csproj.CopyComplete
+E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.exe
+E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.pdb
