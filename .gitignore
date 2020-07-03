@@ -11,3 +11,5 @@ seq2seq/word/model_word/
 gui/__pycache__/
 soliloquize/__pycache__/
 __pycache__/
+.vs/
+packages/

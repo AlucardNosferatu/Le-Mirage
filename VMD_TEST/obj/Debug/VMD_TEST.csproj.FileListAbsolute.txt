@@ -9,3 +9,14 @@ E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.csproj.CoreCompileInputs.cache
 E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.csproj.CopyComplete
 E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.exe
 E:\LostXmas\LostXmas\VMD_TEST\obj\Debug\VMD_TEST.pdb
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\bin\Debug\VMD_TEST.exe.config
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\bin\Debug\VMD_TEST.exe
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\bin\Debug\VMD_TEST.pdb
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\bin\Debug\Scallion.dll
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\bin\Debug\Scallion.xml
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\obj\Debug\VMD_TEST.csprojAssemblyReference.cache
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\obj\Debug\VMD_TEST.csproj.CoreCompileInputs.cache
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\obj\Debug\VMD_TEST.csproj.CopyComplete
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\obj\Debug\VMD_TEST.exe
+C:\Users\16413\Documents\GitHub\Le-Mirage\VMD_TEST\obj\Debug\VMD_TEST.pdb
