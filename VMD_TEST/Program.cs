@@ -22,7 +22,7 @@ namespace VMD_TEST
                 Console.WriteLine(TempKF.Position.X + "  " + TempKF.Position.Y + "  " + TempKF.Position.Z);
                 Console.ReadKey();
             }
-            m.Save("C:\\Users\\Scrooge\\Desktop\\Output.vmd");
+            //m.Save("C:\\Users\\Scrooge\\Desktop\\Output.vmd");
             Console.ReadKey();
         }
     }
